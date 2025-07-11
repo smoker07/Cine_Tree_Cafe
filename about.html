@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Tea House - Tea Shop Website Template</title>
+    <title>Cine Tree Cafe | About Us</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -44,7 +44,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0">
                 <a href="index.html" class="navbar-brand">
-                    <img class="img-fluid" src="img/logo..png" alt="Logo">
+                    <img class="img-fluid" src="img/tree cafe_logo3.png" alt="Logo">
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -53,18 +53,18 @@
                     <div class="navbar-nav ms-auto">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link active">About</a>
-                        <a href="menu.html" class="nav-item nav-link">Menu</a>
+                        <a href="#" class="nav-item nav-link">Menu</a>
                         <!-- <a href="store.html" class="nav-item nav-link">Store</a> -->
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu bg-light rounded-0 m-0">
                                 <!-- <a href="feature.html" class="dropdown-item">Features</a> -->
-                                <a href="blog.html" class="dropdown-item">Blog Article</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="#" class="dropdown-item">Blog Article</a>
+                                <a href="#" class="dropdown-item">Testimonial</a>
                                 <!-- <a href="404.html" class="dropdown-item">404 Page</a> -->
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="#" class="nav-item nav-link">Contact</a>
                     </div>
                     <!-- <div class="border-start ps-4 d-none d-lg-block">
                         <button type="button" class="btn btn-sm p-0"><i class="fa fa-search"></i></button>
@@ -99,43 +99,68 @@
                 <div class="col-lg-6">
                     <div class="row g-3">
                         <div class="col-6 text-end">
-                            <img class="img-fluid bg-white w-100 mb-3 wow fadeIn" data-wow-delay="0.1s" src="img/about-1.jpg" alt="">
-                            <img class="img-fluid bg-white w-50 wow fadeIn" data-wow-delay="0.2s" src="img/about-3.jpg" alt="">
+                            <img id="img1" class="img-fluid bg-white w-100 mb-3 flip-img" src="img/about_01.jpg" alt="">
+                            <img id="img2" class="img-fluid bg-white w-50 flip-img" src="img/about_03.jpg" alt="">
                         </div>
                         <div class="col-6">
-                            <img class="img-fluid bg-white w-50 mb-3 wow fadeIn" data-wow-delay="0.3s" src="img/about-4.jpg" alt="">
-                            <img class="img-fluid bg-white w-100 wow fadeIn" data-wow-delay="0.4s" src="img/about-2.jpg" alt="">
+                            <img id="img3" class="img-fluid bg-white w-50 mb-3 flip-img" src="img/about_04.jpg" alt="">
+                            <img id="img4" class="img-fluid bg-white w-100 flip-img" src="img/about_02.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="section-title">
                         <p class="fs-5 fw-medium fst-italic text-primary">About Us</p>
-                        <h1 class="display-6">The success history of TEA House in 25 years</h1>
+                        <h1 class="display-6">Cine Tree Cafe | Best Coffee Shop Near Connaught Place</h1>
                     </div>
                     <div class="row g-3 mb-4">
-                        <div class="col-sm-4">
-                            <img class="img-fluid bg-white w-100" src="img/about-5.jpg" alt="">
-                        </div>
+                        <!-- <div class="col-sm-4">
+                            <img class="img-fluid bg-white w-100" src="img/about_05.jpg" alt="">
+                        </div> -->
                         <div class="col-sm-8">
-                            <h5>Our tea is one of the most popular drinks in the world</h5>
-                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit</p>
-                        </div>
-                    </div>
-                    <div class="border-top mb-4"></div>
-                    <div class="row g-3">
-                        <div class="col-sm-8">
-                            <h5>Daily use of a cup of tea is good for your health</h5>
-                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit</p>
-                        </div>
-                        <div class="col-sm-4">
-                            <img class="img-fluid bg-white w-100" src="img/about-6.jpg" alt="">
+                            <h5>Our Cafe is one of the Most Popular Cafe in the Delhi</h5>
+                            <p class="mb-0">Its Delicious Menu and Insta-Worthy Decor, It's a favorite among foodies and film lovers alike.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+
+    <!-- About Script -->
+    <script>
+        // Image arrays for each position
+        const imageSets = {
+             img1: ["img/about_01.jpg", "img/About/about_01.jpg", "img/About/about_02.jpg"],
+             img2: ["img/about_03.jpg", "img/About/about_04.jpg", "img/About/about_09.jpg"],
+             img3: ["img/about_04.jpg", "img/About/about_07.jpg", "img/About/about_10.jpg"],
+             img4: ["img/about_02.jpg", "img/About/about_07.jpg", "img/About/about_11.jpg"]
+        };
+    
+        // Current image indexes
+        const indexes = { img1: 0, img2: 0, img3: 0, img4: 0 };
+    
+        function rotateImage(id, images) {
+            const img = document.getElementById(id);
+            indexes[id] = (indexes[id] + 1) % images.length;
+            img.classList.add("flipping");
+    
+            // Wait for flip animation before changing the src
+            setTimeout(() => {
+                img.src = images[indexes[id]];
+                img.classList.remove("flipping");
+            }, 300);
+        }
+    
+        // Rotate images every 3 seconds
+        setInterval(() => {
+            rotateImage("img1", imageSets.img1);
+            rotateImage("img2", imageSets.img2);
+            rotateImage("img3", imageSets.img3);
+            rotateImage("img4", imageSets.img4);
+        }, 3000);
+    </script>
     <!-- About End -->
 
 
@@ -144,15 +169,15 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-primary mb-4">Our Office</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>info@example.com</p>
+                    <h4 class="text-primary mb-4">Our Cafe</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Rafi Marg,Inside Constitutional Club of India, New Delhi - 110001</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91 9871399326</p>
+                    <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>cinetreecafe@gmail.com</p>
                     <div class="d-flex pt-3">
-                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                        <!-- <a class="btn btn-square btn-primary rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a> -->
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/cinetreecafe"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.youtube.com/@CineTreeCafe"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.instagram.com/cinetreecafe2025"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -166,20 +191,18 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-primary mb-4">Business Hours</h4>
                     <p class="mb-1">Monday - Friday</p>
-                    <h6 class="text-light">09:00 am - 07:00 pm</h6>
-                    <p class="mb-1">Saturday</p>
-                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
-                    <p class="mb-1">Sunday</p>
-                    <h6 class="text-light">Closed</h6>
+                    <h6 class="text-light">11:00 AM - 05:00 AM</h6>
+                    <p class="mb-1">Saturday - Sunday</p>
+                    <h6 class="text-light">11:00 AM - 05:00 AM</h6>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <!-- <div class="col-lg-3 col-md-6">
                     <h4 class="text-primary mb-4">Newsletter</h4>
                     <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                     <div class="position-relative w-100">
                         <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
@@ -190,12 +213,8 @@
     <div class="container-fluid copyright py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="fw-medium" href="#">Your Site Name</a>, All Right Reserved.
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="fw-medium" href="https://htmlcodex.com">HTML Codex</a>
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"> 2025
+                    &copy; <a class="fw-medium" href="int">Cine Tree Cafe</a>, All Right Reserved.
                 </div>
             </div>
         </div>

@@ -44,7 +44,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0">
                 <a href="index.html" class="navbar-brand">
-                    <img class="img-fluid" src="img/logo.png" alt="Logo">
+                    <img class="img-fluid" src="img/tree cafe_logo3.png" alt="Logo">
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -52,8 +52,8 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
                         <a href="index.html" class="nav-item nav-link active">Home</a>
-                        <a href="#" class="nav-item nav-link">About</a>
-                        <a href="#" class="nav-item nav-link">Menu</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="menu.html" class="nav-item nav-link">Menu</a>
                         <!-- <a href="store.html" class="nav-item nav-link">Store</a> -->
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -131,44 +131,68 @@
                 <div class="col-lg-6">
                     <div class="row g-3">
                         <div class="col-6 text-end">
-                            <img class="img-fluid bg-white w-100 mb-3 wow fadeIn" data-wow-delay="0.1s" src="img/about-1.jpg" alt="">
-                            <img class="img-fluid bg-white w-50 wow fadeIn" data-wow-delay="0.2s" src="img/about-3.jpg" alt="">
+                            <img id="img1" class="img-fluid bg-white w-100 mb-3 flip-img" src="img/about_01.jpg" alt="">
+                            <img id="img2" class="img-fluid bg-white w-50 flip-img" src="img/about_03.jpg" alt="">
                         </div>
                         <div class="col-6">
-                            <img class="img-fluid bg-white w-50 mb-3 wow fadeIn" data-wow-delay="0.3s" src="img/about-4.jpg" alt="">
-                            <img class="img-fluid bg-white w-100 wow fadeIn" data-wow-delay="0.4s" src="img/about-2.jpg" alt="">
+                            <img id="img3" class="img-fluid bg-white w-50 mb-3 flip-img" src="img/about_04.jpg" alt="">
+                            <img id="img4" class="img-fluid bg-white w-100 flip-img" src="img/about_02.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="section-title">
                         <p class="fs-5 fw-medium fst-italic text-primary">About Us</p>
-                        <h1 class="display-6">Cine Tree Cafe | Best Coffee shop near Connaught place</h1>
+                        <h1 class="display-6">Cine Tree Cafe | Best Coffee Shop Near Connaught Place</h1>
                     </div>
                     <div class="row g-3 mb-4">
-                        <div class="col-sm-4">
-                            <img class="img-fluid bg-white w-100" src="img/about-5.jpg" alt="">
-                        </div>
+                        <!-- <div class="col-sm-4">
+                            <img class="img-fluid bg-white w-100" src="img/about_05.jpg" alt="">
+                        </div> -->
                         <div class="col-sm-8">
-                            <h5>Our Cafe is one of the most popular Cafe in the Delhi</h5>
-                            <p class="mb-0">Its delicious menu and Insta-worthy decor, it's a favorite among foodies and film lovers alike.</p>
+                            <h5>Our Cafe is one of the Most Popular Cafe in the Delhi</h5>
+                            <p class="mb-0">Its Delicious Menu and Insta-Worthy Decor, It's a favorite among foodies and film lovers alike.</p>
                         </div>
                     </div>
-                    <!-- <div class="border-top mb-4"></div>
-                    <div class="row g-3">
-                        <div class="col-sm-8">
-                            <h5>Daily use of a cup of tea is good for your health</h5>
-                            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit</p>
-                        </div>
-                        <div class="col-sm-4">
-                            <img class="img-fluid bg-white w-100" src="img/about-6.jpg" alt="">
-                        </div>
-                    </div> -->
                 </div>
             </div>
         </div>
     </div>
     <!-- About End -->
+
+    <!-- About Script -->
+    <script>
+        // Image arrays for each position
+        const imageSets = {
+             img1: ["img/about_01.jpg", "img/About/about_01.jpg", "img/About/about_02.jpg"],
+             img2: ["img/about_03.jpg", "img/About/about_04.jpg", "img/About/about_09.jpg"],
+             img3: ["img/about_04.jpg", "img/About/about_07.jpg", "img/About/about_10.jpg"],
+             img4: ["img/about_02.jpg", "img/About/about_07.jpg", "img/About/about_11.jpg"]
+        };
+    
+        // Current image indexes
+        const indexes = { img1: 0, img2: 0, img3: 0, img4: 0 };
+    
+        function rotateImage(id, images) {
+            const img = document.getElementById(id);
+            indexes[id] = (indexes[id] + 1) % images.length;
+            img.classList.add("flipping");
+    
+            // Wait for flip animation before changing the src
+            setTimeout(() => {
+                img.src = images[indexes[id]];
+                img.classList.remove("flipping");
+            }, 300);
+        }
+    
+        // Rotate images every 3 seconds
+        setInterval(() => {
+            rotateImage("img1", imageSets.img1);
+            rotateImage("img2", imageSets.img2);
+            rotateImage("img3", imageSets.img3);
+            rotateImage("img4", imageSets.img4);
+        }, 3000);
+    </script>
 
 
     <!-- Products Start -->
@@ -176,35 +200,98 @@
         <div class="container py-5">
             <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <p class="fs-5 fw-medium fst-italic text-primary">Our Products</p>
-                <h1 class="display-6">Tea has a complex positive effect on the body</h1>
+                <h1 class="display-6">What We offer's</h1>
             </div>
             <div class="owl-carousel product-carousel wow fadeInUp" data-wow-delay="0.5s">
                 <a href="" class="d-block product-item rounded">
-                    <img src="img/product-1.jpg" alt="">
+                    <img src="img/Products/Bread_land.jpg" alt="">
                     <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
-                        <h4 class="text-primary">SNACKS</h4>
-                        <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span>
+                        <h4 class="text-primary">BREAD LAND</h4>
+                        <span class="text-body">Bread Land – A heavenly place where every bite tells a story of warmth, flavor, and freshness.</span>
                     </div>
                 </a>
                 <a href="" class="d-block product-item rounded">
-                    <img src="img/product-2.jpg" alt="">
+                    <img src="img/Products/Pizza_Station.jpg" alt="">
                     <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
-                        <h4 class="text-primary">COOKIE BAR</h4>
-                        <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span>
+                        <h4 class="text-primary">THIN CRUST PIZZA STATION</h4>
+                        <span class="text-body">Where crisp perfection meets cheesy indulgence in every slice.</span>
                     </div>
                 </a>
                 <a href="" class="d-block product-item rounded">
-                    <img src="img/product-3.jpg" alt="">
-                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
-                        <h4 class="text-primary">BIRYANI</h4>
-                        <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span>
-                    </div>
-                </a>
-                <a href="" class="d-block product-item rounded">
-                    <img src="img/product-4.jpg" alt="">
+                    <img src="img/Products/Pizza_Combo.jpg" alt="">
                     <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
                         <h4 class="text-primary">PIZZA COMBO</h4>
-                        <span class="text-body">Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum</span>
+                        <span class="text-body">The perfect duo of flavor and value, crafted to satisfy every craving.</span>
+                    </div>
+                </a>
+                <a href="" class="d-block product-item rounded">
+                    <img src="img/Products/Sweets.jpg" alt="">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">SWEET MEMORIES</h4>
+                        <span class="text-body">A delightful journey of flavors that brings back the joy of every cherished moment.</span>
+                    </div>
+                </a>
+                <a href="" class="d-block product-item rounded">
+                    <img src="img/Products/Cookie_Bar.jpg" alt="">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">COOKIE BAR</h4>
+                        <span class="text-body">A crunchy, chewy paradise where every bite is a burst of sweet bliss.</span>
+                    </div>
+                </a>
+                <a href="" class="d-block product-item rounded">
+                    <img src="img/Products/Biryani_Blues.jpg" alt="">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">BIRYANI BLUES</h4>
+                        <span class="text-body">Where every spoonful sings with the rich, aromatic soul of authentic biryani.</span>
+                    </div>
+                </a>
+                <a href="" class="d-block product-item rounded">
+                    <img src="img/Products/Biryani_Combo.jpg" alt="">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">BIRYANI COMBO</h4>
+                        <span class="text-body">A flavorful feast pairing aromatic biryani with the perfect sides for a complete indulgence.</span>
+                    </div>
+                </a>
+                <a href="" class="d-block product-item rounded">
+                    <img src="img/Products/Hot_Coffee.jpg" alt="">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">HOT COFFEE</h4>
+                        <span class="text-body">A warm, energizing hug in every sip to awaken your senses.</span>
+                    </div>
+                </a>
+                <a href="" class="d-block product-item rounded">
+                    <img src="img/Products/Hot_Chocolate.jpg" alt="">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">HOT CHOCOLATE</h4>
+                        <span class="text-body">A rich, velvety delight that wraps you in cozy, chocolaty comfort.</span>
+                    </div>
+                </a>
+                <a href="" class="d-block product-item rounded">
+                    <img src="img/Products/Black_COffee.jpg" alt="">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">BLACK COFFEE</h4>
+                        <span class="text-body">Bold, pure, and powerful – a true brew for coffee lovers.</span>
+                    </div>
+                </a>
+                <a href="" class="d-block product-item rounded">
+                    <img src="img/Products/Tea.jpg" alt="">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">TEA</h4>
+                        <span class="text-body"> A soothing sip of tradition, comfort, and calm in every cup.</span>
+                    </div>
+                </a>
+                <a href="" class="d-block product-item rounded">
+                    <img src="img/Products/Shakes.jpg" alt="">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">SHAKES</h4>
+                        <span class="text-body"> Creamy, dreamy sips packed with flavor and a splash of happiness.</span>
+                    </div>
+                </a>
+                <a href="" class="d-block product-item rounded">
+                    <img src="img/Products/Momos__Bao.jpg" alt="">
+                    <div class="bg-white shadow-sm text-center p-4 position-relative mt-n5 mx-4">
+                        <h4 class="text-primary">MOMOS & BAO</h4>
+                        <span class="text-body">Soft, savory pockets of love, just like mom used to make.</span>
                     </div>
                 </a>
             </div>
@@ -214,11 +301,11 @@
 
 
     <!-- Article Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
-                    <img class="img-fluid" src="img/article.jpg" alt="">
+                    <img class="img-fluid" src="img/article_01.jpg" alt="">
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="section-title">
@@ -231,7 +318,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Article End -->
 
 
@@ -242,14 +329,14 @@
                 <div class="col-lg-6 py-5 wow fadeIn" data-wow-delay="0.1s">
                     <div class="py-5">
                         <h1 class="display-6 mb-4">Coffee is a drink of <span class="text-white">health</span> and <span class="text-white">beauty</span></h1>
-                        <h5 class="fw-normal lh-base fst-italic text-white mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit</h5>
+                        <h5 class="fw-normal lh-base fst-italic text-white mb-5">Cine Tree Cafe, nestled inside the Constitution Club of India, is a movie-themed hangout celebrated for its cinematic charm and vibrant atmosphere. Centrally located amidst nature & open theme, the cafe offers a unique and immersive experience. Its cozy, welcoming vibe makes it a favorite destination for relaxed meals and late-night catch-ups.</h5>
                         <div class="row g-4 mb-5">
                             <div class="col-sm-6">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
                                         <i class="fa fa-check"></i>
                                     </div>
-                                    <span class="text-dark">Black Coffee assortment</span>
+                                    <span class="text-dark">Great Ambience</span>
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -257,7 +344,7 @@
                                     <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
                                         <i class="fa fa-check"></i>
                                     </div>
-                                    <span class="text-dark">Spices & additives</span>
+                                    <span class="text-dark">Energetic Gentry</span>
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -265,7 +352,7 @@
                                     <div class="flex-shrink-0 btn-lg-square bg-white text-primary rounded-circle me-3">
                                         <i class="fa fa-check"></i>
                                     </div>
-                                    <span class="text-dark">Unique accessories</span>
+                                    <span class="text-dark">Cooperative Staff</span>
                                 </div>
                             </div>
                             <div class="col-sm-6">
@@ -283,7 +370,7 @@
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="h-100 d-flex align-items-center justify-content-center" style="min-height: 300px;">
                         <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            data-src="img\Cine_Tree_Video.mp4" data-bs-target="#videoModal">
                             <span></span>
                         </button>
                     </div>
@@ -299,7 +386,7 @@
         <div class="modal-dialog">
             <div class="modal-content rounded-0">
                 <div class="modal-header">
-                    <h3 class="modal-title" id="exampleModalLabel">Youtube Video</h3>
+                    <h3 class="modal-title" id="exampleModalLabel">Virtual Tour of Cine Tree Cafe</h3>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -400,36 +487,46 @@
         <div class="container py-5">
             <div class="section-title text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
                 <p class="fs-5 fw-medium fst-italic text-white">Testimonial</p>
-                <h1 class="display-6">What our clients say about our tea</h1>
+                <h1 class="display-6">What Clients Say About Our Cafe</h1>
             </div>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.5s">
                 <div class="testimonial-item p-4 p-lg-5">
-                    <p class="mb-4">Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                    <p class="mb-4">Cinetree Cafe inside the Constitution Club is a peaceful late-night spot near Connaught Place, open till 5 AM. Surrounded by lush greenery, trees, and pretty little lights, it has a calm outdoor vibe. The food is good with nominal pricing. A perfect place to relax, sit and talk, just be ready for slightly slow service sometimes.</p>
                     <div class="d-flex align-items-center justify-content-center">
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-1.jpg" alt="">
+                        <img class="img-fluid flex-shrink-0" src="https://lh3.googleusercontent.com/a-/ALV-UjVyafv7M_fEe6Q-ock7SbfWcOxIc1rMtuSbTNcKPaeDSJ2WCX_4kA=w90-h90-p-rp-mo-br100" alt="">
                         <div class="text-start ms-3">
-                            <h5>Client Name</h5>
+                            <h5>Kanishka Khanna</h5>
                             <span class="text-primary">Profession</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-item p-4 p-lg-5">
-                    <p class="mb-4">Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                    <p class="mb-4">I recently visited this café and had a really pleasant experience. The ambiance is warm, cozy, and perfect for a relaxed outing. The lighting is soft, the decor is tastefully done, and the overall atmosphere is calm — ideal for catching up with friends or even spending some quiet time alone.</p>
                     <div class="d-flex align-items-center justify-content-center">
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-2.jpg" alt="">
+                        <img class="img-fluid flex-shrink-0" src="https://lh3.googleusercontent.com/a-/ALV-UjWaKfNFn_ulPhqRL0_72eEpFb7FK0tP1ts9ll7QtvQlUgGtgZfzew=w90-h90-p-rp-mo-ba3-br100" alt="">
                         <div class="text-start ms-3">
-                            <h5>Client Name</h5>
-                            <span class="text-primary">Profession</span>
+                            <h5>Sarabjeet Singh</h5>
+                            <span class="text-primary">Local Guide Level 5</span>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-item p-4 p-lg-5">
-                    <p class="mb-4">Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                    <p class="mb-4">V had a great experience at the cine tree cafe, nested in constitutional club of india, cp. Their cottage cheese grilled panini sandwiches r the best. Surrounded by greenery, it has a pleasant feel. It a must try place, when jn cp💕</p>
                     <div class="d-flex align-items-center justify-content-center">
-                        <img class="img-fluid flex-shrink-0" src="img/testimonial-3.jpg" alt="">
+                        <img class="img-fluid flex-shrink-0" src="https://lh3.googleusercontent.com/a-/ALV-UjWhbMAYDj9u8SLtCxax0RvoCQKWc1K4W1scuw0MM3qRisuYRa7Rvw=w90-h90-p-rp-mo-ba8-br100" alt="">
                         <div class="text-start ms-3">
-                            <h5>Client Name</h5>
-                            <span class="text-primary">Profession</span>
+                            <h5>Bhaskar V</h5>
+                            <span class="text-primary">Local Guide Level 10</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-item p-4 p-lg-5">
+                    <p class="mb-4">This self-serving cafe in the heart of Delhi offers a refreshing green ambiance with affordable prices. I loved the Vada Pav, Mushroom Bruschetta, and Cappuccino—each dish bursting with flavor. The open kitchen adds a unique touch, and the peaceful setting makes it a perfect spot to relax. Definitely a pocket-friendly choice for anyone looking to enjoy tasty food in a photogenic setting!</p>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <img class="img-fluid flex-shrink-0" src="https://lh3.googleusercontent.com/a-/ALV-UjWhbMAYDj9u8SLtCxax0RvoCQKWc1K4W1scuw0MM3qRisuYRa7Rvw=w90-h90-p-rp-mo-ba8-br100" alt="">
+                        <div class="text-start ms-3">
+                            <h5>Harsh Goel</h5>
+                            <span class="text-primary">Local Guide Level 6</span>
                         </div>
                     </div>
                 </div>
@@ -448,28 +545,31 @@
             </div>
             <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-8">
-                    <p class="text-center mb-5">Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo</p>
+                    <p class="text-center mb-5">We’d love to hear from you at Cine Tree Cafe!
+                        Whether it’s a question, feedback, or just to say hi — we’re all ears.
+                        Drop us a message, call, or visit us near Connaught Place.
+                        Great conversations start with great coffee — let’s connect!</p>
                     <div class="row g-5">
                         <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.3s">
                             <div class="btn-square mx-auto mb-3">
                                 <i class="fa fa-envelope fa-2x text-white"></i>
                             </div>
-                            <p class="mb-2">info@example.com</p>
-                            <p class="mb-0">support@example.com</p>
+                            <p class="mb-2">cinetreecafe@gmail.com</p>
+                            <!-- <p class="mb-0">support@example.com</p> -->
                         </div>
                         <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.4s">
                             <div class="btn-square mx-auto mb-3">
                                 <i class="fa fa-phone fa-2x text-white"></i>
                             </div>
-                            <p class="mb-2">+012 345 67890</p>
-                            <p class="mb-0">+012 345 67890</p>
+                            <p class="mb-2">+91 9871399326</p>
+                            <!-- <p class="mb-0">+012 345 67890</p> -->
                         </div>
                         <div class="col-md-4 text-center wow fadeInUp" data-wow-delay="0.5s">
                             <div class="btn-square mx-auto mb-3">
                                 <i class="fa fa-map-marker-alt fa-2x text-white"></i>
                             </div>
-                            <p class="mb-2">123 Street</p>
-                            <p class="mb-0">Delhi</p>
+                            <p class="mb-2">Rafi Marg,Inside Constitutional Club of India, Delhi - 110001</p>
+                            <p class="mb-0"></p>
                         </div>
                     </div>
                 </div>
@@ -484,8 +584,8 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-primary mb-4">Our Office</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Rafi Marg,Inside Constitutional Club of India, Sansad Marg Area, New Delhi, Delhi 110001</p>
+                    <h4 class="text-primary mb-4">Our Cafe</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt text-primary me-3"></i>Rafi Marg,Inside Constitutional Club of India, New Delhi - 110001</p>
                     <p class="mb-2"><i class="fa fa-phone-alt text-primary me-3"></i>+91 9871399326</p>
                     <p class="mb-2"><i class="fa fa-envelope text-primary me-3"></i>cinetreecafe@gmail.com</p>
                     <div class="d-flex pt-3">
@@ -529,11 +629,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0"> 2025
-                    &copy; <a class="fw-medium" href="#">Cine Tree Cafe</a>, All Right Reserved.
+                    &copy; <a class="fw-medium" href="index.html">Cine Tree Cafe</a>, All Right Reserved.
                 </div>
             </div>
         </div>
-    </div>,
+    </div>
     <!-- Copyright End -->
 
 
