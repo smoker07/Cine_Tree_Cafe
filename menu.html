@@ -29,6 +29,9 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Menu Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -198,43 +201,149 @@
 
     <!-- Menu Start-->
 
-    <div class="menu-section">
-        <h2>Starters</h2>
+<!-- Starters -->
+<div class="menu-section">
+    <div class="menu-header" onclick="toggleSection(this)">
+      <span>🥗 SHAKES</span>
+      <span class="toggle-icon">+</span>
+    </div>
+    <div class="menu-items">
+      <div class="menu-grid">
         <div class="menu-item">
-          <div class="name">Tomato Basil Soup</div>
-          <div class="price">$6.50</div>
+          <div class="name">Vanila Shake</div>
+          <div class="price">₹ 175.00</div>
         </div>
         <div class="menu-item">
-          <div class="name">Garlic Breadsticks</div>
-          <div class="price">$4.00</div>
-        </div>
-      </div>
-    
-      <div class="menu-section">
-        <h2>Main Courses</h2>
-        <div class="menu-item">
-          <div class="name">Grilled Chicken Alfredo</div>
-          <div class="price">$13.95</div>
+          <div class="name">Mango Shake</div>
+          <div class="price">₹ 185.00</div>
         </div>
         <div class="menu-item">
-          <div class="name">Vegan Buddha Bowl</div>
-          <div class="price">$11.75</div>
-        </div>
-      </div>
-    
-      <div class="menu-section">
-        <h2>Desserts</h2>
-        <div class="menu-item">
-          <div class="name">Chocolate Lava Cake</div>
-          <div class="price">$5.95</div>
+            <div class="name">Oreo Shake</div>
+            <div class="price">₹ 175.00</div>
         </div>
         <div class="menu-item">
-          <div class="name">Lemon Tart</div>
-          <div class="price">$5.25</div>
+            <div class="name">Peanut Butter Shake</div>
+            <div class="price">₹ 195.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">Strawberry Shake</div>
+            <div class="price">₹ 175.00</div>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- Main Courses -->
+  <div class="menu-section">
+    <div class="menu-header" onclick="toggleSection(this)">
+      <span>🍝🥗 SNACKS</span>
+      <span class="toggle-icon">+</span>
+    </div>
+    <div class="menu-items">
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="name">Tree Cafe Chips</div>
+          <div class="price">₹ 80.00</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">French Fries (Plain)</div>
+          <div class="price">₹ 90.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">French fries (MASALA)<span class="veg-tag">🟢 Veg</span></div>
+            <div class="price">₹ 110.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">Mexican Loaded Nachos</div>
+            <div class="price">₹ 110.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">Chilly Garlic Patato</div>
+            <div class="price">₹ 120.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">Chicken Nuggets</div>
+            <div class="price">₹ 140.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">Cheese Shotz<span class="veg-tag">🟢 Veg</span></div>
+            <div class="price">₹ 140.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">Assorted Bruschetta<span class="veg-tag">🟢 Veg</span></div>
+            <div class="price">₹ 130.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">Assorted Bruschetta</div>
+            <div class="price">₹ 160.00</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Desserts -->
+  <div class="menu-section">
+    <div class="menu-header" onclick="toggleSection(this)">
+      <span>🍰 Bread Land</span>
+      <span class="toggle-icon">+</span>
+    </div>
+    <div class="menu-items">
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="name">Aloo Tikki Burger<span class="veg-tag">🟢 Veg</span></div>
+          <div class="price">₹ 110.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">Vada Pao (2 pcs)<span class="veg-tag">🟢 Veg</span></div>
+            <div class="price">₹ 130.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">Corn & Spinach Sandwich<span class="veg-tag">🟢 Veg</span></div>
+            <div class="price">₹ 150.00</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Garden Fresh Herb Chicken Sandwich</div>
+          <div class="price">₹ 180.00</div>
+        </div>
+        <div class="menu-item">
+            <div class="name">Tree House Club Sandwich<span class="veg-tag">🟢 Veg</span></div>
+            <div class="price">₹ 270.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Desserts -->
+  <div class="menu-section">
+    <div class="menu-header" onclick="toggleSection(this)">
+      <span>🍕 Pizza</span>
+      <span class="toggle-icon">+</span>
+    </div>
+    <div class="menu-items">
+      <div class="menu-grid">
+        <div class="menu-item">
+          <div class="name">Thin Crust Pizza Station<span class="veg-tag">🟢 Veg</span><div class="subtitle">Margherita Pizza</div></div>
+          <div class="price">₹ 220.00</div>
+        </div>
+        <div class="menu-item">
+          <div class="name">Garden Fresh Veg Pizza</div>
+          <div class="price">₹ 80.00</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <!-- Menu End -->
+    <script>
+        function toggleSection(header) {
+          const icon = header.querySelector('.toggle-icon');
+          const items = header.nextElementSibling;
+          items.classList.toggle('show');
+          icon.textContent = items.classList.contains('show') ? '–' : '+';
+        }
+      </script>
 
 
     <!-- Footer Start -->
